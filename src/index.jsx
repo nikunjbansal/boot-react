@@ -1,12 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import FixedTable from './table/FixedTable';
+
+import 'fixed-data-table/dist/fixed-data-table.css';
 
 export class App extends React.Component {
 	render() {
 		return (
-			<div>Welcome to the world of React</div>
-		);
+        <FixedTable />
+	);
 	}
 }
 
-ReactDOM.render(<App/>, document.querySelector("#myApp"));
+render(<App/>, document.querySelector("#myApp"));

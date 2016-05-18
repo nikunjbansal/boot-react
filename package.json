@@ -30,8 +30,9 @@
     "json5-loader": "^0.6.0",
     "jsx-loader": "^0.13.2",
     "node-libs-browser": "1.0.0",
-    "react": "15.0.1",
-    "react-dom": "15.0.1"
+    "react": "latest",
+    "react-dom": "latest",
+	"fixed-data-table": "latest"
   },
   "devDependencies": {
     "babel-core": "6.7.7",
@@ -45,5 +46,12 @@
     "url-loader": "0.5.7",
     "webpack": "1.13.0",
     "webpack-dev-server": "1.14.1"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "es2015",
+      "stage-2"
+    ]
   }
 }
