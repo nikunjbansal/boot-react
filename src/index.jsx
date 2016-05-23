@@ -9,6 +9,10 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './components/App';
 import ActiveElections from './components/ActiveElections';
 
+import rootReducer from './reducers';
+
+import './styles/styles.css';
+
 const store = createStore(rootReducer,compose(
     applyMiddleware(thunk),
     window.devToolsExtension ? window.devToolsExtension() : f => f
