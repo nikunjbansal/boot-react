@@ -4,10 +4,8 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 import App from './components/App';
-import ActiveElections from './components/ActiveElections';
 
 import rootReducer from './reducers';
 
@@ -20,11 +18,7 @@ const store = createStore(rootReducer,compose(
 
 render((
     <Provider store={store}>
-        <Router history={hashHistory}>
-            <Route path='/' component={App}>
-                <IndexRoute component={ActiveElections} />
-            </Route>
-        </Router>
+        <App />
     </Provider>
     ), document.getElementById('app')
 );

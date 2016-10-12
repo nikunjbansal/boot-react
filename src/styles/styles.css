@@ -1,3 +1,14 @@
-.customStyle {
-background-color: red
+.centerDiv {
+    width: 50%;
+    border: 2px solid black;
+    display: inline-block;
+    float: left;
+}
+
+.highlight {
+	background-color: lightblue;
+}
+
+.colorText {
+	color: lightblue;
 }

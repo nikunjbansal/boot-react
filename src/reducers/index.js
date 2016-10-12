@@ -8,8 +8,8 @@
 'use strict';
 
 import { combineReducers } from 'redux';
-import activeElections from './activeElections';
+import mainStore from './mainStore';
 
 export default combineReducers({
-    activeElections
+    mainStore
 })

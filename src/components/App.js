@@ -7,24 +7,45 @@
 
 'use strict';
 
-import React from 'react';
-import { Link } from 'react-router';
-import NavBarComponent from './NavBarComponent';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Grid, Row, Col } from 'react-bootstrap';
 
-export default class App extends React.Component {
-    constructor(){
-        super();
+import SidePane from './SidePane';
+import MainApp from './MainApp';
+
+import changeStep from '../actions/changeStep';
+
+function mapStateToProps(state) {
+    return {
+        step: state.mainStore.step,
+        code: state.mainStore.code,
+        selectedIndex: state.mainStore.selectedIndex
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: {
+            changeStep: function() {
+                dispatch(changeStep())
+            }
+        }
+    };
+}
+
+class App extends Component {
+    constructor(props){
+        super(props);
     }
     render() {
         return (
-            <div className="AppContainer col-sm-12 sec">
-                <div className="inner_content01">
-                    <NavBarComponent />
-                    <div className="tab-content dv-deal">    
-                        {this.props.children}
-                    </div>
-                </div>
+            <div>
+                <SidePane {...this.props.step} change={this.props.actions.changeStep}/>
+                <MainApp  {...this.props} />
             </div>
         );
     }
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
